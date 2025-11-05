@@ -1,0 +1,15 @@
+{
+    "title": "Speed VS KSI",
+    "description": "A oneshot mod featuring a song made by Moony. Fanmade playable version by thedumbestcat.",
+    "contributors": [{
+	"name": "thedumbestcat",
+	"role": "original mod"
+      },
+      {
+	"name": "snezhok174",
+	"role": "port"
+    }],
+    "api_version": "0.7.5",
+    "mod_version": "1.0.0",
+    "license": "CC BY 4.0,MIT"
+}
