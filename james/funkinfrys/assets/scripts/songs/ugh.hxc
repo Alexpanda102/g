@@ -1,44 +1,42 @@
 import funkin.play.song.Song;
+import funkin.save.Save;
 import funkin.play.PlayState;
 import funkin.play.cutscene.VideoCutscene;
-import funkin.save.Save;
-
 import funkin.play.PlayStatePlaylist;
 
-class UghSong extends Song {
+class UghSong extends Song
+{
   var hasPlayedCutscene:Bool;
 
-	public function new() {
-		super('ugh');
+  public function new()
+  {
+    super('ugh');
 
     hasPlayedCutscene = false;
-	}
-
-  public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String> {
-    if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard') {
-      var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
-
-      switch (variationId) {
-        case 'pico':
-          // return hasBeatenPicoMix ? [''] : [];
-          // No Pico mix on BF instrumental, sorry!
-          return [];
-        default:
-          return hasBeatenPicoMix ? ['pico'] : [];
-      }
-    }
   }
 
-	public override function isSongNew(currentDifficulty:String, currentVariation:String):Bool{
-    return false;
-	}
+  public override function listAltInstrumentalIds(difficultyId:String, variationId:String):Array<String>
+  {
+    var results:Array<String> = super.listAltInstrumentalIds(difficultyId, variationId);
 
-  public override function onCountdownStart(event:CountdownScriptEvent):Void {
-		super.onCountdownStart(event);
+    if (difficultyId == 'easy' || difficultyId == 'normal' || difficultyId == 'hard')
+    {
+      var hasBeatenPicoMix = Save.instance.hasBeatenSong(this.id, null, 'pico');
+
+      if (!hasBeatenPicoMix) results = [for (id in results) if (id != 'pico') id];
+    }
+
+    return results;
+  }
+
+  public override function onCountdownStart(event:CountdownScriptEvent):Void
+  {
+    super.onCountdownStart(event);
 
     if (!PlayStatePlaylist.isStoryMode) hasPlayedCutscene = true;
 
-    if (!hasPlayedCutscene) {
+    if (!hasPlayedCutscene)
+    {
       trace('Pausing countdown to play a video cutscene (`ugh`)');
 
       hasPlayedCutscene = true;
@@ -47,9 +45,10 @@ class UghSong extends Song {
 
       startVideo();
     }
-	}
+  }
 
-  function startVideo() {
+  function startVideo()
+  {
     VideoCutscene.play(Paths.videos('ughCutscene'));
   }
 
