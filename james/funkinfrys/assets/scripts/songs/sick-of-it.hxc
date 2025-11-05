@@ -1,0 +1,153 @@
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.math.FlxBasePoint;
+import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
+import flixel.util.FlxTimer;
+import funkin.Conductor;
+import flixel.addons.display.FlxBackdrop;
+import funkin.graphics.adobeanimate.FlxAtlasSprite;
+import funkin.graphics.FunkinSprite;
+import funkin.modding.base.ScriptedFlxAtlasSprite;
+import funkin.data.song.SongRegistry;
+import funkin.play.GameOverSubState;
+import funkin.play.PlayState;
+import funkin.play.Countdown;
+import funkin.play.song.ScriptedSong;
+import funkin.data.notestyle.NoteStyleRegistry;
+import funkin.play.notes.Strumline;
+import funkin.play.stage.StageProp;
+import funkin.audio.FunkinSound;
+import funkin.play.cutscene.CutsceneType;
+import flixel.util.FlxSave;
+import funkin.save.Save;
+import funkin.modding.PolymodHandler;
+import funkin.modding.module.ModuleHandler;
+import funkin.util.FileUtil;
+import hxvlc.flixel.FlxVideoSprite;
+import lime.app.Application;
+import funkin.Paths;
+import funkin.play.cutscene.VideoCutscene;
+import funkin.play.PlayStatePlaylist;
+import funkin.util.Constants;
+import Reflect;
+import Paths;
+
+class SickOfItSong extends ScriptedSong {
+	var camPos;
+	var snow = [];
+	var effect = [];
+	var yt;
+	var yttext;
+
+	public function new() {
+		super('sick-of-it');
+	}
+
+	function onNoteHit(event) {
+		PlayState.instance?.vocals?.playerVolume = 1;
+	}
+
+	function reset() {
+		if (PlayState.instance == null) return;
+		FlxTween.cancelTweensOf(PlayState.instance.camHUD);
+		PlayState.instance.mayPauseGame = true;
+		PlayState.instance.camHUD.fade(0xff000000,0.0001,true);
+		PlayState.instance.currentStage.getNamedProp('KSIBG').visible = true;
+		PlayState.instance.currentStage.getNamedProp('IceBackground').visible = false;
+		PlayState.instance.currentStage.getNamedProp('IceThrone').visible = false;
+		PlayState.instance.currentStage.getBoyfriend().visible = true;
+		PlayState.instance.cameraFollowPoint.y = camPos;
+		FlxG.camera.snapToTarget();
+		for (s in snow) {
+			if (s == null || !PlayState.instance.currentStage.members.contains(s)) continue;
+			PlayState.instance.currentStage.remove(s);
+			s.destroy();
+		} snow = [];
+		for (s in effect) {
+			if (s == null || !PlayState.instance.members.contains(s)) continue;
+			PlayState.instance.remove(s);
+			s.destroy();
+		} effect = [];
+
+		Reflect.getProperty(PlayState.instance, "scoreText").visible = false;
+	}
+	function onCountdownStart(event) {
+		camPos = PlayState.instance.cameraFollowPoint.y;
+		reset();
+	}
+	function onSongRetry(event) {reset();}
+
+	var g;
+	override function onStepHit(event) {
+		super.onStepHit(event);
+		switch (event.step) {
+		    case 1040: //beat 260
+			g = new FlxSprite();
+			g.makeGraphic(3840, 2160, 0xfffc290d);
+			g.cameras = [PlayState.instance.camHUD];
+			PlayState.instance.add(g);
+			g.alpha = 0;
+			g.blend = 0;
+			g.scrollFactor.set();
+			g.screenCenter();
+			FlxTween.tween(g, {alpha: 0.8}, 11);
+			effect.push(g);
+		    case 1113:
+			//PlayState.instance.mayPauseGame = false;
+			if (g != null) FlxTween.tween(g, {alpha: 0}, 1.2);
+			PlayState.instance.camHUD.fade(0xff000000,1.2);
+		}
+	}
+
+	override public function onSongEvent(event:SongEventScriptEvent):Void {
+		super.onSongEvent(event);
+		
+		switch (event.eventData.eventKind) {
+		    case "Change Character":
+			if (!PlayState.instance.currentStage.getNamedProp('IceBackground').visible) {
+				PlayState.instance.cameraFollowPoint.y = camPos - 225;
+				FlxG.camera.snapToTarget();
+				FlxG.camera.flash(0xff000000, 2);
+				PlayState.instance.currentStage.getNamedProp('IceBackground').visible = true;
+				PlayState.instance.currentStage.getNamedProp('IceThrone').visible = true;
+				PlayState.instance.currentStage.getNamedProp('KSIBG').visible = false;
+				PlayState.instance.currentStage.getBoyfriend().visible = false;
+
+				var snow1 = new FlxBackdrop(Paths.image("snow1"), 0x10);
+				snow1.setPosition(-650, -720);
+				snow1.velocity.y = 200;
+				snow1.alpha = 0.6;
+				snow1.blend = 0; // ADD
+				PlayState.instance.currentStage.add(snow1);
+				snow.push(snow1);
+
+				var snow2 = new FlxBackdrop(Paths.image("snow2"), 0x10);
+				snow2.setPosition(-630, -720);
+				snow2.velocity.y = 300;
+				snow2.alpha = 0.55;
+				snow2.blend = 0; // ADD
+				PlayState.instance.currentStage.add(snow2);
+				snow.push(snow2);
+
+				var snow3 = new FlxBackdrop(Paths.image("snow3"), 0x10);
+				snow3.setPosition(-610, -720);
+				snow3.velocity.y = 450;
+				snow3.alpha = 0.5;
+				snow3.blend = 0; // ADD
+				PlayState.instance.currentStage.add(snow3);
+				snow.push(snow3);
+
+				var d = new FlxSprite();
+				d.makeGraphic(3840, 2160, 0xff55bbed);
+				d.cameras = [PlayState.instance.camCutscene];
+				PlayState.instance.add(d);
+				d.alpha = 0.45;
+				d.blend = 9; // MULTIPLY
+				d.scrollFactor.set();
+				d.screenCenter();
+				effect.push(d);
+			} else reset();
+		}
+	}
+}

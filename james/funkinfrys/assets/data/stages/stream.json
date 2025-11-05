@@ -1,0 +1,137 @@
+{
+    "props": [
+        {
+            "danceEvery": 0,
+            "zIndex": 12,
+            "position": [
+                -370.0,
+                -850.0
+            ],
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "name": "KSIBG",
+            "isPixel": false,
+            "assetPath": "KSIBackground",
+            "scroll": [
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "danceEvery": 0,
+            "zIndex": -11,
+            "position": [
+                -740.0,
+                -980.0
+            ],
+            "scale": [
+                1.1,
+                1.1
+            ],
+            "name": "IceBackground",
+            "isPixel": false,
+            "assetPath": "IceBackground",
+            "scroll": [
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "danceEvery": 0,
+            "zIndex": -10,
+            "position": [
+                -641.0,
+                -910.0
+            ],
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "name": "IceThrone",
+            "isPixel": false,
+            "assetPath": "IceThrone",
+            "scroll": [
+                1.0,
+                1.0
+            ]
+        },
+        {
+            "danceEvery": 0,
+            "zIndex": 304,
+            "position": [
+                0.0,
+                -720.0
+            ],
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "name": "BlackBarThingyLeft",
+            "isPixel": false,
+            "assetPath": "BlackBarThingyLeft",
+            "scroll": [
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "danceEvery": 0,
+            "zIndex": 305,
+            "position": [
+                0.0,
+                -720.0
+            ],
+            "scale": [
+                1.0,
+                1.0
+            ],
+            "name": "BlackBarThingyRight",
+            "isPixel": false,
+            "assetPath": "BlackBarThingyRight",
+            "scroll": [
+                0.0,
+                0.0
+            ]
+        }
+    ],
+    "cameraZoom": 1,
+    "version": "1.0.0",
+    "characters": {
+        "bf": {
+            "zIndex": 300,
+            "position": [
+                -470,
+                120
+            ],
+            "cameraOffsets": [
+                -100,
+                -100
+            ]
+        },
+        "dad": {
+            "zIndex": 200,
+            "position": [
+                0,
+                0
+            ],
+            "cameraOffsets": [
+                0,
+                -100
+            ]
+        },
+        "gf": {
+            "zIndex": 0,
+            "cameraOffsets": [
+                0,
+                50
+            ],
+            "position": [
+                0,
+                0
+            ]
+        }
+    },
+    "name": "Stream"
+}

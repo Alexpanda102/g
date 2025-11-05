@@ -1,0 +1,10 @@
+{
+    "version": "1.0.0",
+    "name": "Speed VS KSI",
+    "titleAsset": "storymenu/titles/sickofit",
+    "props": [],
+    "background": "#9271FD",
+    "songs": [
+        "sick-of-it"
+    ]
+}
