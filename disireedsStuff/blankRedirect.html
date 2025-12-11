@@ -7,25 +7,10 @@
     body {
       font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
       background: transparent; /* transparent background */
-      padding: 2rem;
+      padding: 0rem;
       margin: 0;
     }
-    .card {
-      background: rgba(255,255,255,0.85);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      max-width: 800px;
-      margin: auto;
-    }
-    label { 
-      font-weight: 600; 
-      display: block; 
-      margin-bottom: .75rem; 
-      font-size: 1.1rem;
-    }
     button {
-      margin-top: 1rem;
       padding: .75rem 1.25rem;
       font-size: 1.1rem;
       border-radius: 8px;
@@ -36,15 +21,22 @@
       transition: background 0.2s ease;
       font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
     }
+	.center-box {
+	  display: flex;
+	  justify-content: center;   /* centers horizontally */
+	  align-items: center;       /* centers vertically (if you want that too) */
+	  height: 100vh;             /* optional: makes it vertically centered on screen */
+	}
     button:hover {
       background: #1e4fcf;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-	<button id="presetBtn">Click me to open the link in about:blank</button>
-  </div>
+	<div class="center-box">
+		<button id="presetBtn">Click me to open the url in about:blank</button>
+	</div>
+  
 
   <script>
     function ensureScheme(url) {
@@ -79,7 +71,9 @@
 		
 		} else {
 		alert("HASH WINDOW IS NOT A URL")
-		{
+		}
+		
+	});
   </script>
 </body>
 </html>
