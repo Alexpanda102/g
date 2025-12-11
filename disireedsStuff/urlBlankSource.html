@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>hashOpener</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+      background: transparent; /* transparent background */
+      padding: 2rem;
+      margin: 0;
+    }
+    .card {
+      background: rgba(255,255,255,0.85);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      max-width: 800px;
+      margin: auto;
+    }
+    label { 
+      font-weight: 600; 
+      display: block; 
+      margin-bottom: .75rem; 
+      font-size: 1.1rem;
+    }
+    button {
+      margin-top: 1rem;
+      padding: .75rem 1.25rem;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    }
+    button:hover {
+      background: #1e4fcf;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+	<button id="presetBtn">Click me to open the link in about:blank</button>
+  </div>
+
+  <script>
+    function ensureScheme(url) {
+      if (/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(url)) return url;
+      if (/^\/\//.test(url)) return url;
+      return 'https://' + url;
+    }
+
+	const preset = document.getElementById('presetBtn');
+	
+	preset.addEventListener('click', () => {
+	
+		const url = window.location.hash.slice(1);
+		
+		if (url) {
+        
+		 // open new about:blank window
+		  var win = window.open();
+		  if (!win) {
+			alert("y did u block popups lil vro");
+			return;
+		  }
+
+		  // inject iframe into new window
+		  var iframe = win.document.createElement('iframe');
+		  iframe.style.width = "100%";
+		  iframe.style.height = "100%";
+		  iframe.style.border = "none";
+		  iframe.src = url;
+		  win.document.body.style.margin = "0";
+		  win.document.body.appendChild(iframe);
+		
+		else
+		alert("HASH WINDOW IS NOT A URL")
+		}
+	
+  </script>
+</body>
+</html>
