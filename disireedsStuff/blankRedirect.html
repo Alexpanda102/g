@@ -3,38 +3,65 @@
 <head>
   <meta charset="utf-8">
   <title>hashOpener</title>
+  
   <style>
     body {
       font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
-      background: transparent; /* transparent background */
+      background: transparent;
       padding: 0rem;
       margin: 0;
     }
-    button {
-      padding: .75rem 1.25rem;
+    .card {
+      background: rgba(255,255,255,0.85);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      max-width: 800px;
+      margin: auto;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: .5rem;
       font-size: 1.1rem;
+    }
+    input {
+      width: 100%;
+      padding: .75rem;
+      font-size: 1.1rem;
+      border: 1px solid #bbb;
       border-radius: 8px;
-      border: none;
-      background: #2563eb;
-      color: white;
-      cursor: pointer;
-      transition: background 0.2s ease;
+      box-sizing: border-box;
+      margin-bottom: 1rem;
       font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
     }
+    button {
+	  font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+	  margin-top: 1rem;
+	  padding: .75rem 1.25rem;
+	  font-size: 1.1rem;
+	  border-radius: 8px;
+	  border: none;
+	  background: #e69138;
+	  color: white;
+	  cursor: pointer;
+	  transition: background 0.2s ease;
+	}
 	.center-box {
 	  display: flex;
 	  justify-content: center;   /* centers horizontally */
 	  align-items: center;       /* centers vertically (if you want that too) */
 	  height: 100vh;             /* optional: makes it vertically centered on screen */
 	}
+	
     button:hover {
-      background: #1e4fcf;
+      background: #b45f06;
     }
   </style>
 </head>
 <body>
 	<div class="center-box">
-		<button id="presetBtn">Click me to open the url in about:blank</button>
+		<button id="presetBtn">Click me to open this url in about:blank</button>
 	</div>
   
 
