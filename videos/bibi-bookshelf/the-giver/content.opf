@@ -1,0 +1,105 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:creator opf:role="aut" opf:file-as="Lowry, Lois">Lois Lowry</dc:creator>
+<dc:publisher>Houghton Mifflin Harcourt</dc:publisher>
+    <meta name="calibre:series_index" content="1.0"/>
+    <dc:rights>Please read the legal notice included in this e-book and/or check the copyright status in your country.</dc:rights>
+    <dc:description>&lt;p class="description"&gt;It's been approximately sixteen years since one of the most prolific and influentional novels of our time--Lois Lowry's The Giver--received the Newbery Medal in 1994. The story centers on twelve-year-old Jonas, who lives in a seemingly ideal world. Not until he is given his life assignment as the Receiver does he begin to understand the dark secrets behind this fragile community.   This gift edition celebrates this Houghton Mifflin touchstone and a Two-Time Newbery Medalist with twelve freshly brushed illustrations by acclaimed artist Bagram Ibatoulline. The Giver as a book stands on its own, of course, but the illustrations of Ibatoulline add to and amplify this work to make it a gift that is even easier to give. Who wouldn't want to give The Giver as a gift?   The Giver is the first in the trilogy of books that includes Gathering Blue and The Messenger.    This is not their first collaboration as Lowry's text met Ibatoulline's illustration in the picture book Crow Call published by Scholastic in Fall 2009.&lt;/p&gt;</dc:description>
+    <dc:language>en-US</dc:language>
+    <meta name="calibre:series" content="Giver Trilogy"/>
+    <meta name="calibre:timestamp" content="2011-08-26T15:37:42+00:00"/>
+    <dc:title>Giver Trilogy 01 - The Giver</dc:title>
+    <meta name="cover" content="cover"/>
+    <dc:date>1992-12-31T06:00:00+00:00</dc:date>
+    <meta name="calibre:title_sort" content="Giver Trilogy 01 - The Giver"/>
+    <dc:contributor opf:role="bkp">calibre (0.8.14) [http://calibre-ebook.com]</dc:contributor>
+    <dc:identifier opf:scheme="URN">urn|uuid|A58BA47A-6C87-1014-91DC-A7C65403DB1D</dc:identifier>
+    <dc:identifier opf:scheme="GOOGLE">d6RIYgEACAAJ</dc:identifier>
+    <dc:identifier opf:scheme="ISBN">9780547424774</dc:identifier>
+    <dc:identifier opf:scheme="FF">l/lois-lowry/giver</dc:identifier>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">cef31032-ebf2-468e-93bb-2380ef3349fd</dc:identifier>
+    <meta name="calibre:rating" content="0"/>
+<dc:subject>Social Issues</dc:subject>
+<dc:subject>Action &amp; Adventure</dc:subject>
+<dc:subject>Juvenile Fiction</dc:subject>
+<dc:subject>Mysteries &amp; Detective Stories</dc:subject>
+<dc:subject>General</dc:subject>
+<dc:subject>Science Fiction</dc:subject>
+<dc:subject>Values &amp; Virtues</dc:subject>
+<meta name="calibre:user_categories" content="{}"/>
+<meta name="calibre:author_link_map" content="{&quot;Lois Lowry&quot;: &quot;&quot;}"/>
+</metadata>
+  <manifest>
+    <item href="cover.jpeg" id="cover" media-type="image/jpeg"/>
+    <item href="OPS/c01.xml" id="c01" media-type="application/xhtml+xml"/>
+    <item href="OPS/c02.xml" id="c02" media-type="application/xhtml+xml"/>
+    <item href="OPS/c03.xml" id="c03" media-type="application/xhtml+xml"/>
+    <item href="OPS/c04.xml" id="c04" media-type="application/xhtml+xml"/>
+    <item href="OPS/c05.xml" id="c05" media-type="application/xhtml+xml"/>
+    <item href="OPS/c06.xml" id="c06" media-type="application/xhtml+xml"/>
+    <item href="OPS/c07.xml" id="c07" media-type="application/xhtml+xml"/>
+    <item href="OPS/c08.xml" id="c08" media-type="application/xhtml+xml"/>
+    <item href="OPS/c09.xml" id="c09" media-type="application/xhtml+xml"/>
+    <item href="OPS/c10.xml" id="c10" media-type="application/xhtml+xml"/>
+    <item href="OPS/c11.xml" id="c11" media-type="application/xhtml+xml"/>
+    <item href="OPS/c12.xml" id="c12" media-type="application/xhtml+xml"/>
+    <item href="OPS/c13.xml" id="c13" media-type="application/xhtml+xml"/>
+    <item href="OPS/c14.xml" id="c14" media-type="application/xhtml+xml"/>
+    <item href="OPS/c15.xml" id="c15" media-type="application/xhtml+xml"/>
+    <item href="OPS/c16.xml" id="c16" media-type="application/xhtml+xml"/>
+    <item href="OPS/c17.xml" id="c17" media-type="application/xhtml+xml"/>
+    <item href="OPS/c18.xml" id="c18" media-type="application/xhtml+xml"/>
+    <item href="OPS/c19.xml" id="c19" media-type="application/xhtml+xml"/>
+    <item href="OPS/c20.xml" id="c20" media-type="application/xhtml+xml"/>
+    <item href="OPS/c21.xml" id="c21" media-type="application/xhtml+xml"/>
+    <item href="OPS/c22.xml" id="c22" media-type="application/xhtml+xml"/>
+    <item href="OPS/c23.xml" id="c23" media-type="application/xhtml+xml"/>
+    <item href="OPS/front01.xml" id="front01" media-type="application/xhtml+xml"/>
+    <item href="OPS/front02.xml" id="front02" media-type="application/xhtml+xml"/>
+    <item href="OPS/front03.xml" id="front03" media-type="application/xhtml+xml"/>
+    <item href="OPS/front04.xml" id="front04" media-type="application/xhtml+xml"/>
+    <item href="OPS/titlepage.xml" id="titlepage" media-type="application/xhtml+xml"/>
+    <item href="OPS/toc.xml" id="toc" media-type="application/xhtml+xml"/>
+    <item href="stylesheet.css" id="css1" media-type="text/css"/>
+    <item href="titlepage.xhtml" id="titlepage1" media-type="application/xhtml+xml"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage1"/>
+    <itemref idref="titlepage"/>
+    <itemref idref="toc"/>
+    <itemref idref="front01"/>
+    <itemref idref="front02"/>
+    <itemref idref="front03"/>
+    <itemref idref="front04"/>
+    <itemref idref="c01"/>
+    <itemref idref="c02"/>
+    <itemref idref="c03"/>
+    <itemref idref="c04"/>
+    <itemref idref="c05"/>
+    <itemref idref="c06"/>
+    <itemref idref="c07"/>
+    <itemref idref="c08"/>
+    <itemref idref="c09"/>
+    <itemref idref="c10"/>
+    <itemref idref="c11"/>
+    <itemref idref="c12"/>
+    <itemref idref="c13"/>
+    <itemref idref="c14"/>
+    <itemref idref="c15"/>
+    <itemref idref="c16"/>
+    <itemref idref="c17"/>
+    <itemref idref="c18"/>
+    <itemref idref="c19"/>
+    <itemref idref="c20"/>
+    <itemref idref="c21"/>
+    <itemref idref="c22"/>
+    <itemref idref="c23"/>
+  </spine>
+  <guide>
+    <reference href="OPS/toc.xml" type="toc" title="Table of Contents"/>
+    <reference href="OPS/titlepage.xml" type="title-page" title="Title Page"/>
+    <reference href="titlepage.xhtml" type="cover" title="Cover"/>
+  </guide>
+</package>
