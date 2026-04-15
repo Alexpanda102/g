@@ -3,143 +3,28 @@
 <head>
   <meta charset="utf-8">
   <title>hashOpener</title>
-  
+  <link rel="stylesheet" href="https://alexpanda102.github.io/g/disireedsStuff/KanStyle.css">
   <style>
-    body {
-      font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
-      background: transparent;
-      padding: 0rem;
-      margin: 0;
-    }
-    .card {
-      background: rgba(255,255,255,0.85);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      max-width: 800px;
-      margin: auto;
-    }
-    label {
-      font-weight: 600;
-      display: block;
-      margin-bottom: .5rem;
-      font-size: 1.1rem;
-    }
-    input {
-      width: 100%;
-      padding: .75rem;
-      font-size: 1.1rem;
-      border: 1px solid #bbb;
-      border-radius: 8px;
-      box-sizing: border-box;
-      margin-bottom: 1rem;
-      font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
-    }
-    button {
-	  font-family: "Comic Sans MS", "Comic Sans", cursive !important;
-	  margin-top: 1rem;
-	  padding: .75rem 1.25rem;
-	  font-size: 1.1rem;
-	  border-radius: 8px;
-	  border: none;
-	  background: #e69138;
-	  color: white;
-	  cursor: pointer;
-	  transition: background 0.2s ease;
-	}
-	.center-box {
+  
+  .center-box {
 	  display: flex;
 	  justify-content: center;   /* centers horizontally */
 	  align-items: center;       /* centers vertically (if you want that too) */
 	  height: 100vh;             /* optional: makes it vertically centered on screen */
 	}
 	
-    button:hover {
-      background: #b45f06;
-    }
   </style>
+  
 </head>
 <body>
+	  <script src="https://alexpanda102.github.io/g/disireedsStuff/modules/ABInator.js"></script>
+
 	<div class="center-box">
 		<button id="presetBtn">Click me to open this url in about:blank</button>
 	</div>
-  
 
   <script>
-    function ensureScheme(url) {
-      if (/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(url)) return url;
-      if (/^\/\//.test(url)) return url;
-      return 'https://' + url;
-    }
-
 	const preset = document.getElementById('presetBtn');
-	
-	function getTabName(url) {
-	  try {
-		const u = new URL(url);
-		let path = u.pathname;
-
-		if (path === "/" || path === "") {
-		  return u.hostname; // example.com
-		}
-
-		// remove trailing slash
-		if (path.endsWith("/")) path = path.slice(0, -1);
-
-		const parts = path.split("/");
-		return parts[parts.length - 1] || u.hostname;
-	  } catch {
-		return "New Tab";
-	  }
-	}
-
-	function getFavicon(url) {
-	  try {
-		const u = new URL(url);
-		return u.origin + "/favicon.ico";
-	  } catch {
-		return "";
-	  }
-	}
-
-	function openUrl(url) {
-	  var win = window.open();
-	  if (!win) {
-		alert("y did u block popups lil vro");
-		return;
-	  }
-
-	  const tabName = getTabName(url);
-	  const favicon = getFavicon(url);
-
-	  // build new page
-	  win.document.write(`
-		<!doctype html>
-		<html>
-		<head>
-		  <title>${tabName}</title>
-		  <link rel="icon" href="${favicon}">
-		  <style>
-			html, body {
-			  margin: 0;
-			  height: 100%;
-			  overflow: hidden;
-			}
-			iframe {
-			  width: 100%;
-			  height: 100%;
-			  border: none;
-			}
-		  </style>
-		</head>
-		<body>
-		  <iframe src="${url}"></iframe>
-		</body>
-		</html>
-	  `);
-
-	  win.document.close();
-	}
 	
 	preset.addEventListener('click', () => {
 	
