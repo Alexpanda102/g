@@ -14,7 +14,7 @@ function openUrlLegacy(url) {
       iframe.src = url;
       win.document.body.style.margin = "0";
       win.document.body.appendChild(iframe);
-
+}
 
 function ensureScheme(url) {
       if (/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(url)) return url;
@@ -22,7 +22,7 @@ function ensureScheme(url) {
       return 'https://' + url;
 }
 	
-	function getTabName(url) {
+function getTabName(url) {
   try {
     const u = new URL(url);
     let path = u.pathname;
