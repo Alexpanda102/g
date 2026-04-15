@@ -88,4 +88,4 @@ function openUrl(url) {
   `);
 
   win.document.close();
-}}
+}
