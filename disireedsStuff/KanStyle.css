@@ -39,8 +39,8 @@ button {
 	font-size: 1.1rem;
 	border-radius: 8px;
 	border: none;
-	background: #e69138;
-	color: white;
+	background: #f6b26b;
+	color: black;
 	cursor: pointer;
 	transition: background 0.2s ease;
 }
